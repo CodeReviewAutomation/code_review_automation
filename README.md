@@ -104,5 +104,13 @@ In order to evaluate the generated predictions in terms of perfect predictions a
 
 ## Train your T5 models
 
+To train the T5 models we have exploited the computing power offered by the *Goggle Colab* service. To replicate our training you will need a **Google Colab** pro account and a **Google Cloud Storage** (GCS) account. Once you have you GCS account you need to set up a new bucket. Please, follow the [original guide](https://cloud.google.com/storage/docs/quickstart-console) provided by Google.
 
+In your GCS bucket upload the content of the archive `automating_code_review.zip`. In it we have stored our datasets, our pre-trained model, our Sentencepiece model and some other utilities to replicate our work. Moreover, we have kept the same structure as our bucket to facilitate the use of the Colab notebooks.
+
+Once everything is set you can:
+ * Pre-train a T5 model from scratch using our pre-training dataset following the `PreTraining.ipynb` notebook;
+ * Fine-tune a T5 model (with or without pretraining) on one of the downstream task (_code-to-code_, _code-to-comment_, _code&comment-to-code_ tasks) using our datasets, following the `FineTuning.ipynb` notebook;
+
+We also provided a notebook (`Preprocessing.ipynb`) with all the preprocessing steps we followed to prepare our pre-training dataset and to train on it the Sentencepiece model. 
 
