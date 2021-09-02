@@ -67,7 +67,42 @@ For the second option (train your own models) you will need a **Google Colab** p
   * `confidence_<k>.txt`: confidence scores file with *BEAM_SIZE = k (k=1,3,5,10)* 
 
 
+## Use our fine-tuned T5 models
+
+In order to generate predictions with our models you need:
+* the models checkpoints stored in `models.zip`;
+* the content of the archive `generate_predictions.zip`;
+* the datasets stored in `datasets.zip`.
+
+The folder `generated_predictions` stores all the necessary code to generate the predictions of the T5 models with different *beam sizes* end evaluate them in terms of perfect predictions and *codeBLEU* (_code-to-code_ and _code&comment-to-code_ tasks) or BLEU (_code-to-comment_ task) score.
+
+Fisrt, you need to convert the chekpoint model in PyThorch. To do that you need to run the following command from the `generated_prediction` folder:
+
+```
+python3 ./tf_2_pytorch_T5.py --tf_checkpoint_path <model_path> --config_file ./config.json --pytorch_dump_path ./dumps
+```
+
+where `<model_path>` is the path of the checkpoint model you want to use. For example, if you want to generate the predictions for the _code-to-code_ task on the _new_large_dataset_ using the pre-trained T5 model, you need to run the following command:
+
+```
+python3 ./tf_2_pytorch_T5.py --tf_checkpoint_path ../models/T5_pre-trained_new_large_dataset_code-to-code/model.ckpt-best --config_file ./config.json --pytorch_dump_path ./dumps
+```
+
+In the python script `generate_predictions/generate_predictions.py` set up the beam size (line 45) right task (line 47) and the path to the right dataset (line 48). For example:
+
+```
+beam_size = 1
+batch_size = 64
+task = 'code2code: '  # possible options: 'code2code: ', 'code&comment2code: ', 'code2comment: '
+data_dir = "../dataset/fine-tuning/new_large/code-to-code/"
+```
+
+The script output is a textual file, `predictions_k.txt` (where k = beam_size), stored in the same dataset folder, containing all the generated predictions.
+
+In order to evaluate the generated predictions in terms of perfect predictions and *codeBLEU* or BLEU score, you need to run one of the python scripts `generate_predictions/for_codeBLEU.py` or `generate_predictions/for_BLEU.py`, after you set the right paths to the target file, the predictions files and where to store the results (lines 69-71 or 17-19).
+
+
 ## Train your T5 models
 
-## Use our fine-tuned T5 models
+
 
