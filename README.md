@@ -12,7 +12,14 @@ For the second option (train your own models) you will need a **Google Colab** p
 
 ## Resources
 
-[Here](https://zenodo.org/record/5387856#.YTDrPZ4zZyo) we stored all the materials you need. 
+* In the `code` folder we provided the Google Colab notebook we used to:
+  * `Preprocessing.ipynb`: preprocess the pre-training dataset and train the Sentencepiece model;
+  * `PreTraining.ipynb`: pre-trian the T5 model;
+  * `FineTuning.ipynb`: fine-tuning the T5 models on different tasks.
+
+* `manual analysis.xlsx`: contains the results of the manual analysis we performed on some non perfect predictions.
+
+[Here](https://zenodo.org/record/5387856#.YTDrPZ4zZyo) we stored the extra materials you need in order to replicare our results:
 
 * `automating_code_review.zip` contains all the necessary to successfully run our Google Colab notebooks (see section **Train your T5 models** for more details).
 
@@ -58,4 +65,9 @@ For the second option (train your own models) you will need a **Google Colab** p
   * `predictions_<k>.txt`: generated predictions file with *BEAM_SIZE = k (k=1,3,5,10)*.
   * `code_bleu_<k>.txt` or `bleu_<k>.txt`: **code_BLEU** or **BLEU** scores file (depending on the task) with *BEAM_SIZE = k (k=1,3,5,10)*
   * `confidence_<k>.txt`: confidence scores file with *BEAM_SIZE = k (k=1,3,5,10)* 
+
+
+## Train your T5 models
+
+## Use our fine-tuned T5 models
 
