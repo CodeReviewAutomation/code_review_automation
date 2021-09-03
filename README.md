@@ -45,15 +45,15 @@ For the second option (train your own models) you will need a **Google Colab** p
 * `models.zip` contains the (best) checkpoints of our T5 models (pre-trained or not), for all the tasks (_code-to-code_, _code-to-comment_, _code&comment-to-code_) and both the datasets (_new_large_dataset_, _Tufano_etal_dataset_) we used. We also stored the checkpoint of the pre-trained model without any fine-tuning. The following is the content of the `models` folder:
   * T5_non_pre-trained_new_large_dataset_code-to-code
   * T5_non_pre-trained_new_large_dataset_code-to-comment
-  * T5_non_pre-trained_new_large_dataset_code&\comment-to-code
+  * T5_non_pre-trained_new_large_dataset_code&comment-to-code
   * T5_non_pre-trained_Tufano_etal_dataset_code-to-code
-  * T5_non_pre-trained_Tufano_etal_dataset_code&\comment-to-code
+  * T5_non_pre-trained_Tufano_etal_dataset_code&comment-to-code
   * T5_pre-trained
   * T5_pre-trained_new_large_dataset_code-to-code
   * T5_pre-trained_new_large_dataset_code-to-comment
-  * T5_pre-trained_new_large_dataset_code&\comment-to-code
+  * T5_pre-trained_new_large_dataset_code&comment-to-code
   * T5_pre-trained_Tufano_etal_dataset_code-to-code
-  * T5_pre-trained_Tufano_etal_dataset_code&\comment-to-code
+  * T5_pre-trained_Tufano_etal_dataset_code&comment-to-code
 
 * `tokenizer.zip` contains the Sentencepiece tokenizer and the extracted vocabulary obtained by training on our pre-training dataset:
   * `TokenizerModel.model`, `TokenizerModel.vocab`
