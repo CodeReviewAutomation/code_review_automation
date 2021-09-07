@@ -12,10 +12,13 @@ For the second option (train your own models) you will need a **Google Colab** p
 
 ## Resources
 
-* In the `code` folder we provide the Google Colab notebooks we used to:
-  * `Preprocessing.ipynb`: preprocess the pre-training dataset and train the Sentencepiece tokenizer;
-  * `PreTraining.ipynb`: pre-train the T5 model;
-  * `FineTuning.ipynb`: fine-tune the T5 models on different tasks.
+* In the `code` folder we provide:
+  * the Google Colab notebooks we used to:
+    * `Preprocessing.ipynb`: preprocess the pre-training dataset and train the Sentencepiece tokenizer;
+    * `PreTraining.ipynb`: pre-train the T5 model;
+    * `FineTuning.ipynb`: fine-tune the T5 models on different tasks.
+  * `Analyzer.py`, `Cleaner.py`: the two main Python classes we used to preprocess the fine-tuning dataset. In particular the function `isCommentRelevant(...)` contained in the `Cleaner` class (line 1129) encloses the updated heuristic to detect irrelevant comments.
+  * `utils`: folder containing some useful resources used during the fine-tuning data preprocessing.
 
 * `manual analysis.xlsx`: contains the results of the manual analysis we performed on some non perfect predictions (see the paper for details).
 
