@@ -1,6 +1,6 @@
 # code_review_automation
 
-This repository is the replication package of the research work **"Automating Code Review Activities 2.0"**.
+This repository is the replication package of the research work **"Using Pre-trained Models to Boost Code Review Automation"**.
 
 In our work we trained several T5 models to automate three code-review tasks, each one using a specific dataset. Here we provide everything needed to replicate our experiments. We also provide all the raw data generated while running our experiments (e.g., the predictions output of the models).
 
